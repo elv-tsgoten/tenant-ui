@@ -1,6 +1,10 @@
 <template>
-  <side-bar/>
-  <router-view/>
+  <div id="sidebar"> 
+    <side-bar/>
+  </div>
+  <div id="body">
+    <router-view/>
+  </div>
 </template>
 
 <script>
@@ -21,6 +25,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+#body {
+  position: absolute;
+  left: 200px;
+  width: 85%;
+  height: 100%;
+  background: #F7F8FC;
 }
 
 #nav {

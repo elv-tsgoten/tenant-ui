@@ -1,16 +1,17 @@
 <template>
   <div class="home">
+    <TopHeader title="Overview"/>
     <img alt="Vue logo" src="../assets/logo.png">
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
+import TopHeader from '@/components/TopHeader.vue'
 
 export default {
   name: 'Home',
   components: {
+    TopHeader
   }
 }
 </script>
