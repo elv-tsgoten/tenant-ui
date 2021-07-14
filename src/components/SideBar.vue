@@ -5,7 +5,7 @@
       <router-link to="/">
         <side-bar-item name="Overview"/>
       </router-link>
-      <router-link to="/about">
+      <router-link to="/users">
         <side-bar-item name="Users"/>
       </router-link>
       <side-bar-item name="Objects"/>

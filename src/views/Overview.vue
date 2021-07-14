@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="overview">
     <TopHeader title="Overview"/>
     <img alt="Vue logo" src="../assets/logo.png">
   </div>
@@ -9,7 +9,7 @@
 import TopHeader from '@/components/TopHeader.vue'
 
 export default {
-  name: 'Home',
+  name: 'Overview',
   components: {
     TopHeader
   }
