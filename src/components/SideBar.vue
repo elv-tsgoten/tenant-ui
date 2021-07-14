@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
+    <h1>Eluvio Tenancy Dashboard</h1>
     <div id="nav-items">
-      <h1>Eluvio Tenancy Dashboard</h1>
       <router-link to="/">
         <div class="item">
           <SideBarItem name="Overview"/>
@@ -12,10 +12,26 @@
           <SideBarItem name="Users"/>
         </div>
       </router-link>
-      <SideBarItem name="Objects"/>
-      <SideBarItem name="Transactions"/>
-      <SideBarItem name="Usage"/>
-      <SideBarItem name="Marketplace"/>
+      <router-link to="/objects">
+        <div class="item">
+          <SideBarItem name="Objects"/>
+        </div>
+      </router-link>
+      <router-link to="/Transactions">
+        <div class="item">
+          <SideBarItem name="Transactions"/>
+        </div>
+      </router-link>
+      <router-link to="/usage">
+        <div class="item">
+          <SideBarItem name="Usage"/>
+        </div>
+      </router-link>
+      <router-link to="/marketplace">
+        <div class="item">
+          <SideBarItem name="Marketplace"/>
+        </div>
+      </router-link>
     </div>
   </div>
 </template>

@@ -28,8 +28,8 @@ h1 {
   /* Reg 16 (0.2 px) */
   font-family: Mulish;
   font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
+  font-weight: lighter;
+  font-size: 18px;
   line-height: 20px;
   /* identical to box height */
   letter-spacing: 0.2px;
