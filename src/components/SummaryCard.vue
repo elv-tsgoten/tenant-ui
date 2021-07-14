@@ -2,7 +2,17 @@
   <div class="summary-card">
     <h1>{{title}}</h1>
     <h2>Tenants: {{tenants}}</h2>
-    <p>View all</p> 
+    <router-link :to="link">
+      <p>View all</p> 
+    </router-link>
+    <div id="summary-list">
+      <ul>
+        <li v-for="val in keys"
+        :key="val">
+        {{val}}: {{info[val]}}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -11,8 +21,10 @@ export default {
   name: "SummaryCard",
   props: {
     title: String, 
+    tenants: String,
+    link: String,
+    info: Object,
     keys: Array,
-    Values: Array,
   }
 }
 </script>

@@ -3,15 +3,19 @@
     <div id="nav-items">
       <h1>Eluvio Tenancy Dashboard</h1>
       <router-link to="/">
-        <side-bar-item name="Overview"/>
+        <div class="item">
+          <SideBarItem name="Overview"/>
+        </div>
       </router-link>
       <router-link to="/users">
-        <side-bar-item name="Users"/>
+        <div class="item">
+          <SideBarItem name="Users"/>
+        </div>
       </router-link>
-      <side-bar-item name="Objects"/>
-      <side-bar-item name="Transactions"/>
-      <side-bar-item name="Usage"/>
-      <side-bar-item name="Marketplace"/>
+      <SideBarItem name="Objects"/>
+      <SideBarItem name="Transactions"/>
+      <SideBarItem name="Usage"/>
+      <SideBarItem name="Marketplace"/>
     </div>
   </div>
 </template>
@@ -41,10 +45,12 @@ export default {
   background: #363740;
 }
 
-#navitems {
-  position: absolute;
-  display: flexbox;
-  top: 70px;
+#nav-items a .item:hover {
+  background: #2e2e33;
+}
+
+#nav-items a.router-link-exact-active .item {
+  background: #424246;
 }
 
 h1 {
