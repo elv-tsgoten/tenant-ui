@@ -21,6 +21,8 @@ h1 {
   left: 0px;
   right: 351px;
   top: calc(50% - 34px/2 + 1px); */
+  margin: 10px;
+  display: flex;
 
   /* Bold 24 (0.3 px) */
   font-family: Mulish;

@@ -33,7 +33,7 @@ export default {
 .sidebar {
   display: flexbox;
   position: absolute;
-  width: 200px;
+  width: 240px;
   height: 110%;
   left: -2px;
   top: -2px;

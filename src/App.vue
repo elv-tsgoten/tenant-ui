@@ -29,7 +29,7 @@ export default {
 
 #body {
   position: absolute;
-  left: 200px;
+  left: 240px;
   width: 85%;
   height: 100%;
   background: #F7F8FC;

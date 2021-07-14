@@ -29,7 +29,7 @@ h1 {
   font-family: Mulish;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 20px;
   /* identical to box height */
   letter-spacing: 0.2px;
