@@ -3,8 +3,20 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div>
+  <side-bar></side-bar>
   <router-view/>
 </template>
+
+<script>
+import SideBar from "@/components/SideBar.vue"
+
+export default {
+  name: "App",
+  components: {
+    SideBar,
+  }
+}
+</script>
 
 <style>
 #app {
