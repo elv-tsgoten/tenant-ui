@@ -11,7 +11,7 @@
       </div>
       <div class="twocards">
         <SummaryCard title="Usage" tenants="" link="/usage"/>
-        <SummaryCard title="Marketplace" tenants="" link="/marketplace"/>
+        <SummaryCard title="Marketplace" tenants="All" link="/marketplace" :info=Marketplace.info :keys=Marketplace.keys />
       </div>
     </div>
   </div>
@@ -47,6 +47,15 @@ export default {
           "Other": "55" 
         },
         keys: ["Libraries", "Content Objects", "Content Types", "Other"]
+      },
+      Marketplace: {
+        info: {
+          "NFTs": "4",
+          "Sites": "3",
+          "NTPs": "9",
+          "Events": "10" 
+        },
+        keys: ["NFTs", "Sites", "NTPs", "Events"]
       },
     }
   }
