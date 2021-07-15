@@ -13,7 +13,10 @@
       <ul>
         <li v-for="val in keys"
         :key="val">
-        {{val}}: {{info[val]}}
+          <div id="summary-list-item">
+            <h3>{{val}}</h3>
+            <h4>{{info[val]}}</h4>
+          </div>
         </li>
       </ul>
     </div>
@@ -35,7 +38,7 @@ export default {
 
 <style scoped>
 .summary-card {
-  height: 250px;
+  height: 300px;
   width: 450px;
   margin: 10px;
   background: #FFFFFF;
@@ -79,12 +82,33 @@ h2 {
   text-align: left;
 }
 
+h3 { 
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  color: #252733;  
+}
+
+h4 {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 10px;
+  text-align: right;
+  letter-spacing: 0.2px;
+  color: #9FA2B4;
+}
+
 p {
   font-family: Mulish;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 300;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 10px;
   text-align: right;
   letter-spacing: 0.2px;
   color: #3751FF;
@@ -93,5 +117,24 @@ p {
 a {
   text-decoration: none;
 }
+
+ul {
+  padding: 0px;
+  list-style-type: none;
+}
+ 
+li {
+  text-align: left;
+}
+
+#summary-list-item {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #DFE0EB;
+}
+
 
 </style>

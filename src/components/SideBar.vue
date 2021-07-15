@@ -20,7 +20,7 @@
           <SideBarItem name="Objects" icon="objects.svg"/>
         </div>
       </router-link>
-      <router-link to="/Transactions">
+      <router-link to="/transactions">
         <div class="item">
           <SideBarItem name="Transactions" icon="transactions.svg"/>
         </div>
