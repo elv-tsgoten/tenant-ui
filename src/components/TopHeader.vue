@@ -1,7 +1,7 @@
 <template>
   <div class="top-header">
     <h1>{{title}}</h1>
-    <h1>{{user}}</h1>
+    <!-- <h1>{{user}}</h1> -->
   </div>
 </template>
 

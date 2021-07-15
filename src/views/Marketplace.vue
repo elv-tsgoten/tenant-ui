@@ -1,5 +1,17 @@
 <template>
   <div class="Marketplace">
-    <h1>This will be a marketplace page.</h1>
+    <TopHeader title="Marketplace"/>
+    <h1>This will be a Marketplace page.</h1>
   </div>
 </template>
+
+<script>
+import TopHeader from '@/components/TopHeader.vue'
+
+export default {
+  name: "Marketplace",
+  components: {
+    TopHeader
+  }
+}
+</script>
