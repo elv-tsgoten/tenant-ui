@@ -1,10 +1,14 @@
 <template>
   <div class="summary-card">
-    <h1>{{title}}</h1>
-    <h2>Tenants: {{tenants}}</h2>
-    <router-link :to="link">
-      <p>View all</p> 
-    </router-link>
+    <div id="card-header">
+      <div id="title-summary">
+        <h1>{{title}}</h1>
+        <h2>Tenants: {{tenants}}</h2>
+      </div>
+      <div id="view-all">
+        <router-link :to="link"><p>View all</p></router-link>
+      </div>
+    </div>
     <div id="summary-list">
       <ul>
         <li v-for="val in keys"
@@ -31,52 +35,63 @@ export default {
 
 <style scoped>
 .summary-card {
-  /* position: absolute;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px; */
-  height: 300px;
-  width: 550px;
+  height: 250px;
+  width: 450px;
   margin: 10px;
-
-  /* grayscale / white */
   background: #FFFFFF;
-  /* grayscale / divider */
   border: 1px solid #DFE0EB;
   box-sizing: border-box;
   border-radius: 16px;
 }
 
+#card-header {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  align-items: left;
+  justify-content: space-between;
+}
+
+#title-summary {
+  align-items: left;
+}
+
 h1 {
-  /* Bold 19 (0.4 px) */
   font-family: Mulish;
   font-style: normal;
   font-weight: bold;
   font-size: 19px;
-  line-height: 24px;
-  /* identical to box height */
+  line-height: 20px;
   letter-spacing: 0.4px;
-  /* grayscale / black */
   color: #252733;
+  text-align: left;
 }
 
 h2 {
-  /* position: absolute;
-  height: 16px;
-  left: 32px;
-  right: 178px;
-  top: 64px; */
-
-  /* Reg 12 (0.1 px) */
   font-family: Mulish;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
-  line-height: 16px;
-  /* identical to box height, or 133% */
+  line-height: 10px;
   letter-spacing: 0.1px;
-  /* grayscale / gray */
   color: #9FA2B4;
+  text-align: left;
 }
+
+p {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: right;
+  letter-spacing: 0.2px;
+  color: #3751FF;
+}
+
+a {
+  text-decoration: none;
+}
+
 </style>

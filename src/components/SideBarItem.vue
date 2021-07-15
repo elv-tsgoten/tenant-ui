@@ -20,13 +20,12 @@ export default {
   display: flex;
   align-items: center;
   padding: 10px;
-  margin-left: 15px;
+  margin-left: 5px;
 }
 img {
-  width: 32px;
-  height: 32px;
+  width: 20px;
+  height: 20px;
   padding: 10px;
-  margin-right: 10px;
   opacity: 0.5;
 }
 h1 {
@@ -41,7 +40,7 @@ h1 {
   font-style: normal;
   font-weight: lighter;
   font-size: 18px;
-  line-height: 20px;
+  line-height: 15px;
   /* identical to box height */
   letter-spacing: 0.2px;
 

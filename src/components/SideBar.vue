@@ -55,7 +55,7 @@ export default {
 
 .sidebar {
   position: fixed;
-  width: 255px;
+  width: 200px;
   height: 110%;
   left: -2px;
   top: -2px;
@@ -78,8 +78,8 @@ export default {
 }
 
 img {
-  width: 64px;
-  height: 64px;
+  width: 32px;
+  height: 32px;
   padding: 5px;
 }
 
@@ -93,8 +93,8 @@ h1 {
   font-family: Mulish;
   font-style: bold;
   font-weight: bold;
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 16px;
+  line-height: 15px;
   letter-spacing: 0.4px;
 
   /* sidebar / gray */

@@ -28,9 +28,8 @@ export default {
 
 #body {
   position: fixed;
-  left: 255px;
+  left: 200px;
   width: 100%;
-  min-width: 800px;
   height: 100%;
   background: #F7F8FC;
 }

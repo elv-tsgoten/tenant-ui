@@ -4,11 +4,11 @@
     <div id="cards">
       <div class="twocards">
         <SummaryCard title="Users Summary" tenants="All" link="/users" :info=info :keys=keys />
-        <SummaryCard title="Objects" link=""/>
+        <SummaryCard title="Objects" tenants="" link=""/>
       </div>
       <div class="twocards">
-        <SummaryCard title="Usage" link=""/>
-        <SummaryCard title="Marketplace" link=""/>
+        <SummaryCard title="Usage" tenants="" link=""/>
+        <SummaryCard title="Marketplace" tenants="" link=""/>
       </div>
     </div>
   </div>
@@ -38,8 +38,6 @@ export default {
 </script>
 
 <style scoped>
-/* .overview {
-} */
 .twocards {
   display: flex;
 }
