@@ -6,8 +6,6 @@
 </template>
 
 <script>
-
-
 export default {
   name: "SideBarItem",
   props: {
@@ -23,12 +21,12 @@ export default {
   align-items: center;
   padding: 10px;
   margin-left: 15px;
-  text-decoration: none;
 }
 img {
   width: 32px;
   height: 32px;
   padding: 10px;
+  margin-right: 10px;
   opacity: 0.5;
 }
 h1 {

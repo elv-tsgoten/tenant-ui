@@ -61,7 +61,6 @@ export default {
   top: -2px;
   /* sidebar / bg */
   background: #363740;
-  text-decoration: none;
 }
 
 #nav-items a .item:hover {
@@ -82,6 +81,10 @@ img {
   width: 64px;
   height: 64px;
   padding: 5px;
+}
+
+a {
+  text-decoration: none;
 }
 
 h1 {

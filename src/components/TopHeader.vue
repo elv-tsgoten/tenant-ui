@@ -15,12 +15,11 @@ export default {
 </script>
 
 <style scoped>
+.top-header {
+  margin: 20px;
+}
+
 h1 {
-  /* position: absolute;
-  height: 34px;
-  left: 0px;
-  right: 351px;
-  top: calc(50% - 34px/2 + 1px); */
   margin: 10px;
   display: flex;
 
