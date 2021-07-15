@@ -3,8 +3,8 @@
     <TopHeader title="Overview"/>
     <div id="cards">
       <div class="twocards">
-        <SummaryCard title="Users Summary" tenants="All" link="/users" :info=info :keys=keys />
-        <SummaryCard title="Objects" tenants="" link="/objects"/>
+        <SummaryCard title="Users Summary" tenants="All" link="/users" :info=Users.info :keys=Users.keys />
+        <SummaryCard title="Objects" tenants="All" link="/objects" :info=Objects.info :keys=Objects.keys />
       </div>
       <div class="twocards">
         <SummaryCard title="Usage" tenants="" link="/usage"/>
@@ -26,12 +26,23 @@ export default {
   }, 
   data() {
     return {
-      info: {
-        "Tenants": "95",
-        "Users": "1005",
-        "Groups": "3"
+      Users: {
+        info: {
+          "Tenants": "95",
+          "Users": "1005",
+          "Groups": "3"
+        },
+        keys: ["Tenants", "Users", "Groups"]
       },
-      keys: ["Tenants", "Users", "Groups"]
+      Objects: {
+        info: {
+          "Libraries": "25",
+          "Content Objects": "500",
+          "Content Types": "30",
+          "Other": "55" 
+        },
+        keys: ["Libraries", "Content Objects", "Content Types", "Other"]
+      },
     }
   }
 }
@@ -41,6 +52,7 @@ export default {
 .twocards {
   display: flex;
   margin-left: 10px;
+  justify-content: center;
 }
 
 </style>

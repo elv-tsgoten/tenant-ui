@@ -38,8 +38,8 @@ export default {
 
 <style scoped>
 .summary-card {
-  height: 300px;
-  width: 450px;
+  height: 350px;
+  width: 500px;
   margin: 10px;
   background: #FFFFFF;
   border: 1px solid #DFE0EB;

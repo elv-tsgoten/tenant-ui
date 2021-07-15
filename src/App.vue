@@ -28,8 +28,9 @@ export default {
 
 #body {
   position: fixed;
+  top: 0%;
   left: 200px;
-  width: 100%;
+  right: 0%;
   height: 100%;
   background: #F7F8FC;
   overflow: scroll;
