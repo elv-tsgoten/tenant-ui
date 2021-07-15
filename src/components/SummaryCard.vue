@@ -135,6 +135,4 @@ li {
   justify-content: space-between;
   border-bottom: 1px solid #DFE0EB;
 }
-
-
 </style>

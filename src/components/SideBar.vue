@@ -88,7 +88,6 @@ a {
 }
 
 h1 {
-  /* Bold 19 (0.4 px) */
   text-align: left;
   font-family: Mulish;
   font-style: bold;
@@ -96,10 +95,7 @@ h1 {
   font-size: 16px;
   line-height: 15px;
   letter-spacing: 0.4px;
-
-  /* sidebar / gray */
-  color: #A4A6B3;
-
+  color: #FFFFFF;
   opacity: 0.7;
 }
 
