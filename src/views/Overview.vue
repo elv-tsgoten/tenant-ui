@@ -7,6 +7,9 @@
         <SummaryCard title="Objects" tenants="All" link="/objects" :info=Objects.info :keys=Objects.keys />
       </div>
       <div class="twocards">
+        <ChartsCard title="Transactions" />
+      </div>
+      <div class="twocards">
         <SummaryCard title="Usage" tenants="" link="/usage"/>
         <SummaryCard title="Marketplace" tenants="" link="/marketplace"/>
       </div>
@@ -17,12 +20,14 @@
 <script>
 import TopHeader from '@/components/TopHeader.vue'
 import SummaryCard from '@/components/SummaryCard.vue'
+import ChartsCard from '@/components/ChartsCard.vue'
 
 export default {
   name: 'Overview',
   components: {
     TopHeader,
-    SummaryCard
+    SummaryCard,
+    ChartsCard
   }, 
   data() {
     return {
