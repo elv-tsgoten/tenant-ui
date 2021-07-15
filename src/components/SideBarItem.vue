@@ -1,10 +1,13 @@
 <template>
   <div class="sidebar-item">
+    <img :src="require(`../assets/${icon}`)" :alt="icon" />
     <h1>{{name}}</h1>
   </div>
 </template>
 
 <script>
+
+
 export default {
   name: "SideBarItem",
   props: {
@@ -16,7 +19,17 @@ export default {
 
 <style scoped>
 .sidebar-item {
-  padding: 5px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-left: 15px;
+  text-decoration: none;
+}
+img {
+  width: 32px;
+  height: 32px;
+  padding: 10px;
+  opacity: 0.5;
 }
 h1 {
   /* position: absolute; */

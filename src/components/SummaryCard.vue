@@ -45,7 +45,7 @@ export default {
   /* grayscale / divider */
   border: 1px solid #DFE0EB;
   box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: 16px;
 }
 
 h1 {

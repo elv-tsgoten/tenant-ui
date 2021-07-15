@@ -1,35 +1,38 @@
 <template>
   <div class="sidebar">
-    <h1>Eluvio Tenancy Dashboard</h1>
+    <div id="app-header">
+      <img src="@/assets/logo.png" alt="elv">
+      <h1>Eluvio Tenancy Dashboard</h1>
+    </div>
     <div id="nav-items">
       <router-link to="/">
         <div class="item">
-          <SideBarItem name="Overview"/>
+          <SideBarItem name="Overview" icon="overview.svg"/>
         </div>
       </router-link>
       <router-link to="/users">
         <div class="item">
-          <SideBarItem name="Users"/>
+          <SideBarItem name="Users" icon="users.svg"/>
         </div>
       </router-link>
       <router-link to="/objects">
         <div class="item">
-          <SideBarItem name="Objects"/>
+          <SideBarItem name="Objects" icon="objects.svg"/>
         </div>
       </router-link>
       <router-link to="/Transactions">
         <div class="item">
-          <SideBarItem name="Transactions"/>
+          <SideBarItem name="Transactions" icon="transactions.svg"/>
         </div>
       </router-link>
       <router-link to="/usage">
         <div class="item">
-          <SideBarItem name="Usage"/>
+          <SideBarItem name="Usage" icon="usage.svg"/>
         </div>
       </router-link>
       <router-link to="/marketplace">
         <div class="item">
-          <SideBarItem name="Marketplace"/>
+          <SideBarItem name="Marketplace" icon="marketplace.svg"/>
         </div>
       </router-link>
     </div>
@@ -51,14 +54,14 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@700&display=swap');
 
 .sidebar {
-  display: flexbox;
-  position: absolute;
-  width: 240px;
+  position: fixed;
+  width: 255px;
   height: 110%;
   left: -2px;
   top: -2px;
   /* sidebar / bg */
   background: #363740;
+  text-decoration: none;
 }
 
 #nav-items a .item:hover {
@@ -69,19 +72,26 @@ export default {
   background: #424246;
 }
 
-h1 {
-  /* position: relative; */
-  text-align: center;
-  width: 155px;
-  height: 50px;
-  /* top: 41px; */
+#app-header {
+  display: flex;
+  margin: 20px;
+  align-items: center;
+}
 
+img {
+  width: 64px;
+  height: 64px;
+  padding: 5px;
+}
+
+h1 {
   /* Bold 19 (0.4 px) */
+  text-align: left;
   font-family: Mulish;
-  font-style: normal;
+  font-style: bold;
   font-weight: bold;
-  font-size: 19px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 30px;
   letter-spacing: 0.4px;
 
   /* sidebar / gray */

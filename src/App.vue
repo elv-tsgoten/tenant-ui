@@ -24,13 +24,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 
 #body {
-  position: absolute;
-  left: 240px;
-  width: 85%;
+  position: fixed;
+  left: 255px;
+  width: 100%;
+  min-width: 800px;
   height: 100%;
   background: #F7F8FC;
 }
