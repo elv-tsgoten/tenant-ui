@@ -1,8 +1,7 @@
 <script>
-import { defineComponent } from 'vue'
 import { Radar } from 'vue3-chart-v2'
 
-export default defineComponent({
+export default {
   name: 'SportChart',
   extends: Radar,
   data () {
@@ -30,5 +29,5 @@ export default defineComponent({
   mounted () {
     this.renderChart(this.state.chartData, this.state.chartOptions)
   }
-})
+}
 </script>
