@@ -1,17 +1,21 @@
 <template>
   <div class="charts-card">
-    <h1>{{title}} chart will be here.</h1>
     <div id="chart">
-      <SportChart />
+      <!-- <SportChart /> -->
+      <ChartEventsByTopic :width="1000" />
     </div>
   </div>
 </template>
 
 <script>
-import SportChart from './SportChart.vue'
+// import SportChart from './SportChart.vue'
+import ChartEventsByTopic from '@/components/EventsTopicsChart.vue'
 
 export default {
-  components: { SportChart },
+  components: { 
+    // SportChart,
+    ChartEventsByTopic
+  },
   name: "ChartsCard",
   props: {
     title: String,
@@ -21,7 +25,7 @@ export default {
 
 <style scoped>
 .charts-card {
-  height: 350px;
+  height: 450px;
   width: 1020px;
   margin: 10px;
   background: #FFFFFF;
@@ -31,5 +35,6 @@ export default {
 }
 #chart {
   max-width: 200px;
+  max-height: 350px;
 }
 </style>
