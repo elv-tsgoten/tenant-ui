@@ -39,7 +39,8 @@ export default {
             ]
         },
         chartOptions: {
-          responsive: false,
+          responsive: true,
+          maintainAspectRatio: false,
         }
       }
     }

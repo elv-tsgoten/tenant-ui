@@ -1,8 +1,8 @@
 <template>
   <div class="charts-card">
-    <div id="chart">
+    <div class="chart">
       <!-- <SportChart /> -->
-      <ChartEventsByTopic :width="1000" />
+      <ChartEventsByTopic />
     </div>
   </div>
 </template>
@@ -33,8 +33,9 @@ export default {
   box-sizing: border-box;
   border-radius: 16px;
 }
-#chart {
-  max-width: 200px;
-  max-height: 350px;
+.chart {
+  margin: 20px;
+  max-width: 1020px;
+  max-height: 450px;
 }
 </style>
