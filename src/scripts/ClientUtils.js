@@ -1,21 +1,18 @@
 const ElvClient = require("@eluvio/elv-client-js");
 const ethers = require("ethers");
-const TestConfig = require("../TestConfiguration.json");
-
-const client;
+const TestConfig = require("./Configuration.json");
 
 async function getClient() {
-  if (client == null) {
-    const client = await ElvClient.ElvClient.FromConfigurationUrl({ configUrl: TestConfig["config-url"] });
-    const wallet = client.GenerateWallet();
-    const signer = wallet.AddAccount({ privateKey: "0xf1acf70dd745f9c907dd855ac515ba8b0ba9f4ebfe10f5af3c472a6a0eead885" });
-    client.SetSigner({ signer });
-  }
+  const client = await ElvClient.ElvClient.FromConfigurationUrl({ configUrl: TestConfig["config-url"] });
+  const wallet = client.GenerateWallet();
+  const signer = wallet.AddAccount({ privateKey: "0xf1acf70dd745f9c907dd855ac515ba8b0ba9f4ebfe10f5af3c472a6a0eead885" });
+  client.SetSigner({ signer });
   return client;
 }
 
 /** Custom make KMS Call. */
-async function MakeKMSCall({methodName, params, paramTypes, signature=true}) {
+// async function MakeKMSCall({methodName, params, paramTypes, signature=true}) {
+async function MakeKMSCall({methodName, params}) {
 
   const KMSUrls = [TestConfig["kms-url"]];
 
@@ -40,6 +37,6 @@ async function MakeKMSCall({methodName, params, paramTypes, signature=true}) {
       }
     }
   }
-};
+}
 
 module.exports = { getClient, MakeKMSCall }

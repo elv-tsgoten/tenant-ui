@@ -22,6 +22,8 @@ import TopHeader from '@/components/TopHeader.vue'
 import SummaryCard from '@/components/SummaryCard.vue'
 import ChartsCard from '@/components/ChartsCard.vue'
 
+import { getTenantInfo } from '@/scripts/UsersRequests.js'
+
 export default {
   name: 'Overview',
   components: {
@@ -37,7 +39,8 @@ export default {
           "Users": "1005",
           "Groups": "3"
         },
-        keys: ["Tenants", "Users", "Groups"]
+        keys: ["Tenants", "Users", "Groups"],
+        dump: this.getTenants(),
       },
       Objects: {
         info: {
@@ -57,6 +60,12 @@ export default {
         },
         keys: ["NFTs", "Sites", "NTPs", "Events"]
       },
+    }
+  },
+  methods: {
+    async getTenants() {
+      let tid = "iteniSQ8XYv7WBKGxmFwHPFz5mwnZDz";
+      console.log(await getTenantInfo(tid));
     }
   }
 }
