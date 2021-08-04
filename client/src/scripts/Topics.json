@@ -1,5 +1,6 @@
 {
   "CreateTenant": "0xc2fe67ac699789805c53a93eea70eb0e316deaf8db4b810382d2412ba4fcb4c8",
   "CreateGroup": "0xa3b1fe71ae61bad8cffa485b230e24e518938f76182a30fa0d9979e7237ad159",
-  "BindUserWallet": "0x05e3f3adaf96d565bb326088a1d8e0d78497549df2c99a8ab681e5fbc7a9b3f2"
+  "BindUserWallet": "0x05e3f3adaf96d565bb326088a1d8e0d78497549df2c99a8ab681e5fbc7a9b3f2",
+  "CreateLibrary": "0x473c07a6d0228c4fb8fe2be3b4617c3b5fb7c0f8cd9ba4b67e8631844b9b6571"
 }
