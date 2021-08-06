@@ -6,7 +6,7 @@
         <h2>Tenants: {{tenants}}</h2>
       </div>
       <div id="view-all">
-        <router-link :to="link"><p>View all</p></router-link>
+        <router-link :to="link"><p v-if="link">View all</p><p v-else></p></router-link>
       </div>
     </div>
     <div id="summary-list">

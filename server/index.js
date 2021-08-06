@@ -9,10 +9,17 @@ app.use(cors());
 app.use(express.json());
 
 /* Get number of tenants created. */
-app.get("/tenants", async(req, res) => {
+app.get("/tenants/:time", async(req, res) => {
   try {
     let topic_id = topics.CreateTenant;
-    let query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    const { time } = req.params;
+    let query = "";
+    if ( time == "all") {
+      query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    } else {
+      query = `SELECT COUNT(*) FROM public.logs LEFT JOIN public.blocks on block_hash = hash WHERE first_topic = '${topic_id}' AND to_date(timestamp::TEXT, 'YYYY-MM-DD HH24:MI:SS') > current_date - interval '${time} days'`;
+    }
+    
     const result = JSON.stringify(await pool.query(query));
     res.send(result);
   } catch (err) {
@@ -21,10 +28,17 @@ app.get("/tenants", async(req, res) => {
 })
 
 /* Get number of users created. */
-app.get("/users", async(req, res) => {
+app.get("/users/:time", async(req, res) => {
   try {
     let topic_id = topics.BindUserWallet;
-    let query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    const { time } = req.params;
+    let query = "";
+    if ( time == "all") {
+      query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    } else {
+      query = `SELECT COUNT(*) FROM public.logs LEFT JOIN public.blocks on block_hash = hash WHERE first_topic = '${topic_id}' AND to_date(timestamp::TEXT, 'YYYY-MM-DD HH24:MI:SS') > current_date - interval '${time} days'`;
+    }
+    
     const result = JSON.stringify(await pool.query(query));
     res.send(result);
   } catch (err) {
@@ -33,10 +47,17 @@ app.get("/users", async(req, res) => {
 })
 
 /* Get number of groups created. */
-app.get("/groups", async(req, res) => {
+app.get("/groups/:time", async(req, res) => {
   try {
     let topic_id = topics.CreateGroup;
-    let query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    const { time } = req.params;
+    let query = "";
+    if ( time == "all") {
+      query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    } else {
+      query = `SELECT COUNT(*) FROM public.logs LEFT JOIN public.blocks on block_hash = hash WHERE first_topic = '${topic_id}' AND to_date(timestamp::TEXT, 'YYYY-MM-DD HH24:MI:SS') > current_date - interval '${time} days'`;
+    }
+    
     const result = JSON.stringify(await pool.query(query));
     res.send(result);
   } catch (err) {
@@ -45,10 +66,17 @@ app.get("/groups", async(req, res) => {
 })
 
 /* Get number of libraries created. */
-app.get("/libraries", async(req, res) => {
+app.get("/libraries/:time", async(req, res) => {
   try {
     let topic_id = topics.CreateLibrary;
-    let query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    const { time } = req.params;
+    let query = "";
+    if ( time == "all") {
+      query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    } else {
+      query = `SELECT COUNT(*) FROM public.logs LEFT JOIN public.blocks on block_hash = hash WHERE first_topic = '${topic_id}' AND to_date(timestamp::TEXT, 'YYYY-MM-DD HH24:MI:SS') > current_date - interval '${time} days'`;
+    }
+    
     const result = JSON.stringify(await pool.query(query));
     res.send(result);
   } catch (err) {
@@ -57,10 +85,17 @@ app.get("/libraries", async(req, res) => {
 })
 
 /* Get number of content objects created. */
-app.get("/content", async(req, res) => {
+app.get("/content/:time", async(req, res) => {
   try {
     let topic_id = topics.CreateContent;
-    let query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    const { time } = req.params;
+    let query = "";
+    if ( time == "all") {
+      query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    } else {
+      query = `SELECT COUNT(*) FROM public.logs LEFT JOIN public.blocks on block_hash = hash WHERE first_topic = '${topic_id}' AND to_date(timestamp::TEXT, 'YYYY-MM-DD HH24:MI:SS') > current_date - interval '${time} days'`;
+    }
+    
     const result = JSON.stringify(await pool.query(query));
     res.send(result);
   } catch (err) {
@@ -70,10 +105,17 @@ app.get("/content", async(req, res) => {
 
 
 /* Get number of content spaces created. */
-app.get("/spaces", async(req, res) => {
+app.get("/spaces/:time", async(req, res) => {
   try {
     let topic_id = topics.CreateSpace;
-    let query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    const { time } = req.params;
+    let query = "";
+    if ( time == "all") {
+      query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    } else {
+      query = `SELECT COUNT(*) FROM public.logs LEFT JOIN public.blocks on block_hash = hash WHERE first_topic = '${topic_id}' AND to_date(timestamp::TEXT, 'YYYY-MM-DD HH24:MI:SS') > current_date - interval '${time} days'`;
+    }
+    
     const result = JSON.stringify(await pool.query(query));
     res.send(result);
   } catch (err) {
@@ -82,10 +124,17 @@ app.get("/spaces", async(req, res) => {
 })
 
 /* Get number of content types created. */
-app.get("/contenttype/created", async(req, res) => {
+app.get("/contenttype/created/:time", async(req, res) => {
   try {
     let topic_id = topics.CreateContentType;
-    let query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    const { time } = req.params;
+    let query = "";
+    if ( time == "all") {
+      query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    } else {
+      query = `SELECT COUNT(*) FROM public.logs LEFT JOIN public.blocks on block_hash = hash WHERE first_topic = '${topic_id}' AND to_date(timestamp::TEXT, 'YYYY-MM-DD HH24:MI:SS') > current_date - interval '${time} days'`;
+    }
+    
     const result = JSON.stringify(await pool.query(query));
     res.send(result);
   } catch (err) {
@@ -94,10 +143,17 @@ app.get("/contenttype/created", async(req, res) => {
 })
 
 /* Get number of content types added. */
-app.get("/contenttype/added", async(req, res) => {
+app.get("/contenttype/added/:time", async(req, res) => {
   try {
     let topic_id = topics.ContentTypeAdded;
-    let query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    const { time } = req.params;
+    let query = "";
+    if ( time == "all") {
+      query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    } else {
+      query = `SELECT COUNT(*) FROM public.logs LEFT JOIN public.blocks on block_hash = hash WHERE first_topic = '${topic_id}' AND to_date(timestamp::TEXT, 'YYYY-MM-DD HH24:MI:SS') > current_date - interval '${time} days'`;
+    }
+    
     const result = JSON.stringify(await pool.query(query));
     res.send(result);
   } catch (err) {
@@ -106,10 +162,17 @@ app.get("/contenttype/added", async(req, res) => {
 })
 
 /* Get number of content types removed. */
-app.get("/contenttype/removed", async(req, res) => {
+app.get("/contenttype/removed/:time", async(req, res) => {
   try {
     let topic_id = topics.ContentTypeRemoved;
-    let query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    const { time } = req.params;
+    let query = "";
+    if ( time == "all") {
+      query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    } else {
+      query = `SELECT COUNT(*) FROM public.logs LEFT JOIN public.blocks on block_hash = hash WHERE first_topic = '${topic_id}' AND to_date(timestamp::TEXT, 'YYYY-MM-DD HH24:MI:SS') > current_date - interval '${time} days'`;
+    }
+    
     const result = JSON.stringify(await pool.query(query));
     res.send(result);
   } catch (err) {
@@ -118,12 +181,18 @@ app.get("/contenttype/removed", async(req, res) => {
 })
 
 /* Get number of content objects created. */
-app.get("/contentobject/created", async(req, res) => {
+app.get("/contentobject/created/:time", async(req, res) => {
   try {
     let topic_id = topics.ContentObjectCreated;
-    let query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    const { time } = req.params;
+    let query = "";
+    if ( time == "all") {
+      query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    } else {
+      query = `SELECT COUNT(*) FROM public.logs LEFT JOIN public.blocks on block_hash = hash WHERE first_topic = '${topic_id}' AND to_date(timestamp::TEXT, 'YYYY-MM-DD HH24:MI:SS') > current_date - interval '${time} days'`;
+    }
+    
     const result = JSON.stringify(await pool.query(query));
-    console.log(result)
     res.send(result);
   } catch (err) {
     console.error(err.message);
@@ -131,10 +200,17 @@ app.get("/contentobject/created", async(req, res) => {
 })
 
 /* Get number of content objects deleted. */
-app.get("/contentobject/deleted", async(req, res) => {
+app.get("/contentobject/deleted/:time", async(req, res) => {
   try {
     let topic_id = topics.ContentObjectDeleted;
-    let query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    const { time } = req.params;
+    let query = "";
+    if ( time == "all") {
+      query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    } else {
+      query = `SELECT COUNT(*) FROM public.logs LEFT JOIN public.blocks on block_hash = hash WHERE first_topic = '${topic_id}' AND to_date(timestamp::TEXT, 'YYYY-MM-DD HH24:MI:SS') > current_date - interval '${time} days'`;
+    }
+    
     const result = JSON.stringify(await pool.query(query));
     res.send(result);
   } catch (err) {
