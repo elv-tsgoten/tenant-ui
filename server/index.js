@@ -117,6 +117,31 @@ app.get("/contenttype/removed", async(req, res) => {
   }
 })
 
+/* Get number of content objects created. */
+app.get("/contentobject/created", async(req, res) => {
+  try {
+    let topic_id = topics.ContentObjectCreated;
+    let query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    const result = JSON.stringify(await pool.query(query));
+    console.log(result)
+    res.send(result);
+  } catch (err) {
+    console.error(err.message);
+  }
+})
+
+/* Get number of content objects deleted. */
+app.get("/contentobject/deleted", async(req, res) => {
+  try {
+    let topic_id = topics.ContentObjectDeleted;
+    let query = `SELECT COUNT(*) FROM public.logs WHERE first_topic = '${topic_id}'`;
+    const result = JSON.stringify(await pool.query(query));
+    res.send(result);
+  } catch (err) {
+    console.error(err.message);
+  }
+})
+
 app.listen(5000, () => {
   console.log("server has started on port 5000");
 });

@@ -25,9 +25,11 @@ async function getLibrariesCount() {
 }
 
 async function getContentCount() {
-  const response = await fetch("http://localhost:5000/content");
-  const jsonData = await response.json();
-  return jsonData.rows[0].count;
+  const responseCreated = await fetch("http://localhost:5000/contentobject/created");
+  const jsonDataCreated = await responseCreated.json();
+  const responseDeleted = await fetch("http://localhost:5000/contentobject/deleted");
+  const jsonDataDeleted = await responseDeleted.json();
+  return parseInt(jsonDataCreated.rows[0].count) - parseInt(jsonDataDeleted.rows[0].count);
 }
 
 async function getContentSpacesCount() {
@@ -39,14 +41,10 @@ async function getContentSpacesCount() {
 async function getContentTypeCount() {
   const responseCreated = await fetch("http://localhost:5000/contenttype/created");
   const jsonDataCreated = await responseCreated.json();
-  
   const responseAdded = await fetch("http://localhost:5000/contenttype/added");
   const jsonDataAdded = await responseAdded.json();
-
   const responseRemoved = await fetch("http://localhost:5000/contenttype/removed");
   const jsonDataRemoved = await responseRemoved.json();
-
-
   return parseInt(jsonDataCreated.rows[0].count) - parseInt(jsonDataRemoved.rows[0].count) + parseInt(jsonDataAdded.rows[0].count);
 }
 
