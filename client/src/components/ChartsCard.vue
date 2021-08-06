@@ -1,19 +1,16 @@
 <template>
   <div class="charts-card">
     <div class="chart">
-      <!-- <SportChart /> -->
       <ChartEventsByTopic />
     </div>
   </div>
 </template>
 
 <script>
-// import SportChart from './SportChart.vue'
 import ChartEventsByTopic from '@/components/EventsTopicsChart.vue'
 
 export default {
   components: { 
-    // SportChart,
     ChartEventsByTopic
   },
   name: "ChartsCard",

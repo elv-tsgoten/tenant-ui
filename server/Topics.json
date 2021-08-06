@@ -1,0 +1,12 @@
+{
+  "CreateTenant": "0xc2fe67ac699789805c53a93eea70eb0e316deaf8db4b810382d2412ba4fcb4c8",
+  "CreateGroup": "0xa3b1fe71ae61bad8cffa485b230e24e518938f76182a30fa0d9979e7237ad159",
+  "BindUserWallet": "0x05e3f3adaf96d565bb326088a1d8e0d78497549df2c99a8ab681e5fbc7a9b3f2",
+  "CreateAccessWallet": "0x56c4bf13bebaa9f2be39ac3f2f4619a0dd1b694bb8c5f43c6b244a6dba0f0cca",
+  "CreateLibrary": "0x473c07a6d0228c4fb8fe2be3b4617c3b5fb7c0f8cd9ba4b67e8631844b9b6571",
+  "CreateContent": "0xa0633ea0b3cb5796607e5f551ae79c7eeee0dc7ee0c3ff8996506261651368ce",
+  "CreateContentType": "0x9e69777f30c55126be256664fa7beff4b796ac32ebceab94df5071b0148017f8",
+  "ContentTypeRemoved": "0xd41375b9d347dfe722f90a780731abd23b7855f9cf14ea7063c4cab5f9ae58e2",
+  "ContentTypeAdded": "0x280016f7418306a55542432120fd1a239ef9fcc1a92694d8d44ca76be0249ea7",
+  "CreateSpace": "0x599bb380c80b69455450a615c515544b8da3b09f2efa116a5f0567682203cf54"
+}

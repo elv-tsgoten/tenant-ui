@@ -22,6 +22,8 @@ import TopHeader from '@/components/TopHeader.vue'
 import SummaryCard from '@/components/SummaryCard.vue'
 import ChartsCard from '@/components/ChartsCard.vue'
 
+import counts from '@/scripts/OverviewCounts.js'
+
 export default {
   name: 'Overview',
   components: {
@@ -31,23 +33,8 @@ export default {
   }, 
   data() {
     return {
-      Users: {
-        info: {
-          "Tenants": "95",
-          "Users": "1005",
-          "Groups": "3"
-        },
-        keys: ["Tenants", "Users", "Groups"],
-      },
-      Objects: {
-        info: {
-          "Libraries": "25",
-          "Content Objects": "500",
-          "Content Types": "30",
-          "Other": "55" 
-        },
-        keys: ["Libraries", "Content Objects", "Content Types", "Other"]
-      },
+      Users: {},
+      Objects: {},
       Marketplace: {
         info: {
           "NFTs": "4",
@@ -59,6 +46,31 @@ export default {
       },
     }
   },
+  async created() {
+    try {
+      const Users = {
+        info: {
+          "Tenants": await counts.getTenantCount(),
+          "Users": await counts.getUsersCount(),
+          "Groups": await counts.getGroupsCount(),
+        },
+        keys: ["Tenants", "Users", "Groups"],
+      };
+      this.Users = Users;
+      const Objects = {
+        info: {
+          "Libraries": await counts.getLibrariesCount(),
+          "Content Objects": await counts.getContentCount(),
+          "Content Types": await counts.getContentTypeCount(),
+          "Content Spaces": await counts.getContentSpacesCount(),
+        },
+        keys: ["Libraries", "Content Objects", "Content Types", "Content Spaces"]
+      };
+      this.Objects = Objects;
+    } catch (err) {
+      console.error(err.message);
+    }
+  }
 }
 </script>
 
