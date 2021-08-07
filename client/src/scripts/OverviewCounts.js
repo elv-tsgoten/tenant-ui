@@ -51,4 +51,10 @@ async function getContentTypeCount() {
   return parseInt(jsonDataCreated.rows[0].count) - parseInt(jsonDataRemoved.rows[0].count) + parseInt(jsonDataAdded.rows[0].count);
 }
 
-export default { getTenantCount, getUsersCount, getGroupsCount, getLibrariesCount, getContentCount, getContentSpacesCount, getContentTypeCount}
+async function getTokenCount() {
+  const response = await fetch(`${DB_ADDRESS}/tokens`);
+  const jsonData = await response.json();
+  return jsonData.rows[0].sum;
+}
+
+export default { getTenantCount, getUsersCount, getGroupsCount, getLibrariesCount, getContentCount, getContentSpacesCount, getContentTypeCount, getTokenCount}

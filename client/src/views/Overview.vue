@@ -35,15 +35,7 @@ export default {
     return {
       Users: {},
       Objects: {},
-      Marketplace: {
-        info: {
-          "NFTs": "4",
-          "Sites": "3",
-          "NTPs": "9",
-          "Events": "10" 
-        },
-        keys: ["NFTs", "Sites", "NTPs", "Events"]
-      },
+      Marketplace: {},
     }
   },
   async created() {
@@ -67,6 +59,16 @@ export default {
         keys: ["Libraries", "Content Objects", "Content Types", "Content Spaces"]
       };
       this.Objects = Objects;
+      const Marketplace = {
+        info: {
+          "Tokens": await counts.getTokenCount(),
+          "Sites": "?",
+          "NTPs": "?",
+          "Events": "?" 
+        },
+        keys: ["Tokens", "Sites", "NTPs", "Events"]
+      }
+      this.Marketplace = Marketplace;
     } catch (err) {
       console.error(err.message);
     }

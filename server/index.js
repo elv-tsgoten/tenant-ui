@@ -218,6 +218,17 @@ app.get("/contentobject/deleted/:time", async(req, res) => {
   }
 })
 
+/* Get tokens held by individuals. */
+app.get("/tokens", async(req, res) => {
+  try {
+    let query = "SELECT SUM(holder_count) FROM public.tokens"
+    const result = JSON.stringify(await pool.query(query));
+    res.send(result);
+  } catch (err) {
+    console.error(err.message);
+  }
+})
+
 app.listen(5000, () => {
   console.log("server has started on port 5000");
 });
