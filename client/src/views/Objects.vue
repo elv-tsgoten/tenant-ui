@@ -48,20 +48,22 @@ export default {
       this.All = All;
       const Day = {
         info: {
-          "Libraries": await counts.getLibrariesCount("10"),
-          "Content Objects": await counts.getContentCount("10"),
-          "Content Types": await counts.getContentTypeCount("10"),
-          "Content Spaces": await counts.getContentSpacesCount("10"),
+          // TODO: Change back to 1, just for demo
+          "Libraries": await counts.getLibrariesCount("17"),
+          "Content Objects": await counts.getContentCount("17"),
+          "Content Types": await counts.getContentTypeCount("17"),
+          "Content Spaces": await counts.getContentSpacesCount("17"),
         },
         keys: ["Libraries", "Content Objects", "Content Types", "Content Spaces"]
       };
       this.Day = Day;
       const Week = {
         info: {
-          "Libraries": await counts.getLibrariesCount("17"),
-          "Content Objects": await counts.getContentCount("17"),
-          "Content Types": await counts.getContentTypeCount("17"),
-          "Content Spaces": await counts.getContentSpacesCount("17"),
+          // TODO: Change back to 7, just for demo
+          "Libraries": await counts.getLibrariesCount("24"),
+          "Content Objects": await counts.getContentCount("24"),
+          "Content Types": await counts.getContentTypeCount("24"),
+          "Content Spaces": await counts.getContentSpacesCount("24"),
         },
         keys: ["Libraries", "Content Objects", "Content Types", "Content Spaces"]
       };
