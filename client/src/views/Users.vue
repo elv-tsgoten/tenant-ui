@@ -47,18 +47,20 @@ export default {
       this.All = All;
       const Day = {
         info: {
-          "Tenants": await counts.getTenantCount("10"),
-          "Users": await counts.getUsersCount("10"),
-          "Groups": await counts.getGroupsCount("10"),
+          // TODO: Change back to 1, just for demo
+          "Tenants": await counts.getTenantCount("17"),
+          "Users": await counts.getUsersCount("17"),
+          "Groups": await counts.getGroupsCount("17"),
         },
         keys: ["Tenants", "Users", "Groups"],
       };
       this.Day = Day;
       const Week = {
         info: {
-          "Tenants": await counts.getTenantCount("17"),
-          "Users": await counts.getUsersCount("17"),
-          "Groups": await counts.getGroupsCount("17"),
+          // TODO: Change back to 7, just for demo
+          "Tenants": await counts.getTenantCount("24"),
+          "Users": await counts.getUsersCount("24"),
+          "Groups": await counts.getGroupsCount("24"),
         },
         keys: ["Tenants", "Users", "Groups"],
       };
